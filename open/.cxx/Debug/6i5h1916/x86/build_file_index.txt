@@ -1,0 +1,7 @@
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/CMakeLists.txt
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/GetGitRevisionDescription.cmake
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/GetGitRevisionDescription.cmake.in
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/lz4.cmake
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/lzo.cmake
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/openssl/openssl.cmake
+/Users/vkas/AndroidStudioProjects/WatermelonVPN/open/src/main/cpp/tools.cmake

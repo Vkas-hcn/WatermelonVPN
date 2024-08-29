@@ -1,0 +1,50 @@
+{
+  "code": 200,
+  "msg": "",
+  "data": {
+    "smart_list": [
+      {
+        "mode": "open",
+        "ip": "1.1.1.1",
+        "port": 443,
+        "user_pwd": "O6UcTwyLMDfAJqvdC5.l2hb",
+        "city": "Los Angeles",
+        "country_name": "United States"
+      },
+      {
+        "mode": "open",
+        "ip": "8.8.8.8",
+        "port": 443,
+        "user_pwd": "O6UcTwyLMDfAJqvdC5.l2hb",
+        "city": "Tokyo",
+        "country_name": "Japan"
+      }
+    ],
+    "server_list": [
+      {
+        "mode": "open",
+        "ip": "195.234.82.34",
+        "port": 443,
+        "user_pwd": "O6UcTwyLMDfAJqvdC5.l2hb",
+        "city": "Los Angeles",
+        "country_name": "United States"
+      },
+      {
+        "mode": "open",
+        "ip": "4.4.4.4",
+        "port": 443,
+        "user_pwd": "O6UcTwyLMDfAJqvdC5.l2hb",
+        "city": "Singapore",
+        "country_name": "Singapore"
+      },
+      {
+        "mode": "open",
+        "ip": "115.224.12.24",
+        "port": 443,
+        "user_pwd": "O6UcTwyLMDfAJqvdC5.l2hb",
+        "city": "Sydney",
+        "country_name": "Australia"
+      }
+    ]
+  }
+}

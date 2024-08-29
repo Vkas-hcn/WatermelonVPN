@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="showVpnState"
+            type="Integer"
+            android:value="0" />
+        <variable
+            name="showVpnGuide"
+            type="Boolean"
+            android:value="false" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_connect">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/sofia_sans_black"
+            android:text="@string/app_name"
+            android:textColor="#FF000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_setting_main"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_setting"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="30dp"
+            android:text="Download"
+            android:textColor="#FF222222"
+            android:textSize="14sp"
+            android:drawableEnd="@drawable/icon_up_main"
+            android:drawablePadding="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:text="Upload"
+            android:textColor="#FF222222"
+            android:textSize="14sp"
+            android:drawableEnd="@drawable/icon_down_main"
+            android:drawablePadding="16dp"
+            app:layout_constraintStart_toEndOf="@+id/tv_down"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_down"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_down" />
+
+        <TextView
+            android:id="@+id/tv_down_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/sofia_sans_black"
+            android:text="0"
+            android:textColor="#FF222222"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_down"
+            app:layout_constraintTop_toBottomOf="@+id/tv_down" />
+
+        <TextView
+            android:id="@+id/tv_down_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/sofia_sans_black"
+            android:text="b/s"
+            android:textColor="#FF222222"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_down_value"
+            app:layout_constraintStart_toEndOf="@+id/tv_down_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_down_value" />
+
+        <TextView
+            android:id="@+id/tv_up_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/sofia_sans_black"
+            android:text="0"
+            android:textColor="#FF222222"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_up"
+            app:layout_constraintTop_toBottomOf="@+id/tv_up" />
+
+        <TextView
+            android:id="@+id/tv_up_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:fontFamily="@font/sofia_sans_black"
+            android:text="b/s"
+            android:textColor="#FF222222"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_up_value"
+            app:layout_constraintStart_toEndOf="@+id/tv_up_value"
+            app:layout_constraintTop_toTopOf="@+id/tv_up_value" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginVertical="16dp"
+            android:background="#97BEE3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_down_value"
+            tools:layout_editor_absoluteX="40dp" />
+
+        <LinearLayout
+            android:id="@+id/lin_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_service"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_smart" />
+
+            <TextView
+                android:id="@+id/tv_smart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="Smart"
+                android:textColor="#FF222222"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_direction" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_times"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/sofia_sans_black"
+            android:text="00:00:00"
+            android:textColor="#FF222222"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lin_service" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aiv_connect"
+            android:layout_width="164dp"
+            android:layout_height="146dp"
+            android:layout_marginTop="30dp"
+            android:src="@{showVpnState==0?@drawable/icon_connect:@drawable/icon_con_suceess}"
+            android:visibility="@{showVpnState !=1 ?View.VISIBLE:View.INVISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_times" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieGuide"
+            android:layout_width="164dp"
+            android:layout_height="146dp"
+            android:visibility="@{showVpnState ==1 ?View.VISIBLE:View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/aiv_connect"
+            app:layout_constraintEnd_toEndOf="@+id/aiv_connect"
+            app:layout_constraintStart_toStartOf="@+id/aiv_connect"
+            app:layout_constraintTop_toTopOf="@+id/aiv_connect"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="center.json"
+            app:lottie_loop="true" />
+
+        <View
+            android:id="@+id/view_guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{showVpnGuide?View.VISIBLE:View.GONE}"
+            android:background="#80000000" />
+
+        <LinearLayout
+            android:id="@+id/llConnectMain"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:progressDrawable="@drawable/pb_connect"
+            app:layout_constraintTop_toBottomOf="@+id/aiv_connect">
+
+            <ProgressBar
+                android:id="@+id/pb_connect"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:progressDrawable="@drawable/pb_connect"
+                android:visibility="@{showVpnState ==1 ?View.VISIBLE:View.GONE}"
+                app:layout_constraintTop_toBottomOf="@+id/aiv_connect" />
+
+            <ImageView
+                android:id="@+id/img_connect"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bnt_connect"
+                android:visibility="@{showVpnState ==2 ?View.VISIBLE:View.GONE}" />
+
+            <ImageView
+                android:id="@+id/img_disconnect"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_dis"
+                android:visibility="@{showVpnState ==0 ?View.VISIBLE:View.GONE}" />
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_guide"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/llConnectMain"
+            android:visibility="@{showVpnGuide?View.VISIBLE:View.GONE}"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="hand.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/tv_jd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="connect"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/llConnectMain"
+            app:layout_constraintEnd_toEndOf="@+id/llConnectMain"
+            app:layout_constraintStart_toStartOf="@+id/llConnectMain"
+            app:layout_constraintTop_toTopOf="@+id/llConnectMain" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
